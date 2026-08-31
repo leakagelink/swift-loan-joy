@@ -82,6 +82,8 @@ npx cap sync android
 | `gradlew.bat` not recognized | `cd android` karke chalayein, ya `.\gradlew.bat` |
 | SDK location not found | `ANDROID_HOME` set karein (Step 1) ya `android\local.properties` me `sdk.dir=C\:\\Users\\<you>\\AppData\\Local\\Android\\Sdk` |
 | White screen app me | Internet check karein; `capacitor.config.ts` ka `server.url` valid hona chahiye |
+| `Project with path ':capacitor-android' could not be found` | `cap sync` fail hua tha (webDir missing). `git pull` karke `npm run build; npx cap sync android` dobara chalayein |
+| `missing dist directory` warning | `webDir` ab `.output/public` hai — pehle `npm run build` chalana zaruri hai |
 | JAVA_HOME error | JDK 21 path set karein (Step 1) |
 | Gradle download slow | Pehli baar 5-10 min lagta hai, wait karein |
 
