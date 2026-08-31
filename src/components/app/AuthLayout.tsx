@@ -18,7 +18,7 @@ export function AuthLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background lg:grid lg:grid-cols-[1.1fr_minmax(0,520px)]">
+    <div className="flex min-h-screen flex-col bg-background lg:grid lg:grid-cols-[1.1fr_minmax(0,520px)]">
       {/* Brand panel */}
       <div className="brand-gradient sheen px-6 pt-10 pb-16 text-primary-foreground sm:px-10 lg:flex lg:min-h-screen lg:flex-col lg:justify-center lg:px-14 lg:pb-10">
         <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg">
@@ -41,7 +41,7 @@ export function AuthLayout({
       </div>
 
       {/* Form panel */}
-      <div className="-mt-10 rounded-t-[2rem] bg-surface px-5 pt-6 pb-12 shadow-raised sm:px-8 lg:mt-0 lg:flex lg:min-h-screen lg:items-center lg:rounded-none lg:px-12 lg:shadow-none">
+      <div className="-mt-8 flex-1 rounded-t-[2rem] bg-surface px-5 pt-8 pb-12 shadow-raised sm:px-8 lg:mt-0 lg:flex lg:min-h-screen lg:items-center lg:rounded-none lg:px-12 lg:shadow-none">
         <div className="mx-auto w-full max-w-md">{children}</div>
       </div>
     </div>
