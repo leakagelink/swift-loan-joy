@@ -30,6 +30,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
   --color-gold-foreground: var(--gold-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -74,6 +75,7 @@
   --accent: oklch(0.945 0.03 180);
   --accent-foreground: oklch(0.36 0.075 180);
   --gold: oklch(0.72 0.145 78);
+  --gold-soft: oklch(0.86 0.12 84);
   --gold-foreground: oklch(0.99 0.01 90);
   --destructive: oklch(0.6 0.21 22);
   --destructive-foreground: oklch(0.99 0 0);
