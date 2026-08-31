@@ -71,7 +71,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="-mt-10 space-y-5 px-4">
+      <div className="relative z-10 -mt-10 space-y-5 px-4">
         <div className="grid grid-cols-2 gap-3">
           <div className="card-soft p-4">
             <p className="text-xs font-semibold text-muted-foreground">Payout · This month</p>

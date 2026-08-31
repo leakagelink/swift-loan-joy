@@ -73,7 +73,7 @@ function MenuPage() {
     <AppShell>
       <PageHeader eyebrow="More" title="Menu" subtitle="Everything else, neatly organised." />
 
-      <div className="-mt-5 space-y-5 px-4">
+      <div className="relative z-10 -mt-5 space-y-5 px-4">
         <div className="card-soft flex items-center gap-3 p-4">
           <span className="grid size-12 place-items-center rounded-full brand-gradient text-base font-bold text-primary-foreground">
             SG

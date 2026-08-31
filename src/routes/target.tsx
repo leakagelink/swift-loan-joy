@@ -44,7 +44,7 @@ function TargetPage() {
     <AppShell>
       <PageHeader eyebrow="Performance tracker" title="My Target" />
 
-      <div className="-mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4">
         <div className="card-soft flex items-center justify-between px-4 py-3">
           <button className="grid size-9 place-items-center rounded-xl bg-muted text-muted-foreground">
             <ChevronLeft className="size-4" />

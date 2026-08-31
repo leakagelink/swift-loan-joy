@@ -37,7 +37,7 @@ function CalculatorPage() {
     <AppShell>
       <PageHeader eyebrow="Tools" title="EMI Calculator" subtitle="Quote instantly on the call." />
 
-      <div className="-mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4">
         <div className="card-soft brand-gradient sheen p-5 text-center text-primary-foreground">
           <p className="text-xs font-semibold tracking-[0.2em] uppercase opacity-80">Monthly EMI</p>
           <p className="mt-1 font-display text-4xl font-bold">{inr(emi)}</p>

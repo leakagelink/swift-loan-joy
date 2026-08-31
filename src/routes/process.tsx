@@ -26,7 +26,7 @@ function ProcessPage() {
         subtitle="Imran Qureshi · Business Loan"
       />
 
-      <div className="-mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4">
         <div className="card-soft grid grid-cols-3 divide-x divide-border p-4 text-center">
           <div>
             <p className="text-[11px] text-muted-foreground">Amount</p>

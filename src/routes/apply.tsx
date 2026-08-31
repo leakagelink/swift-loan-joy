@@ -90,7 +90,7 @@ function ApplyPage() {
         subtitle="Complete all steps to submit the file for login."
       />
 
-      <div className="-mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4">
         <div className="card-soft p-4">
           <div className="flex items-center gap-3">
             <div className="h-2 flex-1 rounded-full bg-muted">

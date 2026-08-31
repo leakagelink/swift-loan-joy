@@ -37,7 +37,7 @@ function PaymentPage() {
         subtitle="Pick a plan, pay once, start logging files."
       />
 
-      <div className="-mt-5 space-y-5 px-4">
+      <div className="relative z-10 -mt-5 space-y-5 px-4">
         <div className="space-y-3">
           {loginPlans.map((p) => {
             const active = plan === p.id;
