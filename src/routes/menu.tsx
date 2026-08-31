@@ -87,6 +87,7 @@ function MenuPage() {
           </span>
         </div>
 
+        <div className="grid gap-5 lg:grid-cols-2">
         {groups.map((g) => (
           <div key={g.title}>
             <h2 className="mb-2 px-1 text-[11px] font-bold tracking-[0.16em] text-muted-foreground uppercase">
@@ -124,6 +125,7 @@ function MenuPage() {
             </div>
           </div>
         ))}
+        </div>
 
         <Link
           to="/login"
