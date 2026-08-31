@@ -27,7 +27,13 @@ const deskNav = [
   { to: "/menu", label: "Menu", icon: MenuIcon },
 ];
 
-export function BrandMark({ compact = false }: { compact?: boolean }) {
+export function BrandMark({
+  compact = false,
+  tone = "dark",
+}: {
+  compact?: boolean;
+  tone?: "dark" | "light";
+}) {
   return (
     <span className="flex min-w-0 items-center gap-2">
       <span className="brand-gradient sheen grid size-9 shrink-0 place-items-center rounded-xl text-primary-foreground shadow-raised">
@@ -35,10 +41,18 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
       </span>
       {!compact && (
         <span className="min-w-0 leading-none">
-          <span className="block truncate font-display text-[15px] font-bold text-primary-deep">
+          <span
+            className={`block truncate font-display text-[15px] font-bold ${
+              tone === "light" ? "text-primary-foreground" : "text-primary-deep"
+            }`}
+          >
             Business Standard
           </span>
-          <span className="block text-[11px] font-semibold tracking-[0.16em] text-gold uppercase">
+          <span
+            className={`block text-[11px] font-semibold tracking-[0.16em] uppercase ${
+              tone === "light" ? "text-gold-soft" : "text-gold"
+            }`}
+          >
             Loan
           </span>
         </span>

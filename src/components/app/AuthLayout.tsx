@@ -22,7 +22,7 @@ export function AuthLayout({
       {/* Brand panel */}
       <div className="brand-gradient sheen px-6 pt-10 pb-16 text-primary-foreground sm:px-10 lg:flex lg:min-h-screen lg:flex-col lg:justify-center lg:px-14 lg:pb-10">
         <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg">
-          <BrandMark />
+          <BrandMark tone="light" />
           <h1 className="mt-8 text-3xl font-bold sm:text-4xl lg:text-5xl">{title}</h1>
           <p className="mt-2 max-w-md text-sm opacity-85 sm:text-base">{subtitle}</p>
 
