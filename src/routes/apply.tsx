@@ -90,7 +90,7 @@ function ApplyPage() {
         subtitle="Complete all steps to submit the file for login."
       />
 
-      <div className="relative z-10 -mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4 md:px-6 lg:px-8">
         <div className="card-soft p-4">
           <div className="flex items-center gap-3">
             <div className="h-2 flex-1 rounded-full bg-muted">
@@ -102,7 +102,7 @@ function ApplyPage() {
             <span className="text-xs font-bold text-primary">{progress}%</span>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">
             {steps.map((s) => {
               const done = s.n < active;
               const current = s.n === active;
@@ -145,7 +145,7 @@ function ApplyPage() {
           </h2>
 
           {active === 5 ? (
-            <div className="space-y-2.5">
+            <div className="grid gap-2.5 md:grid-cols-2">
               {docs.map((d) => (
                 <div
                   key={d}
@@ -159,7 +159,7 @@ function ApplyPage() {
               ))}
             </div>
           ) : active === 7 ? (
-            <div className="space-y-3">
+            <div className="grid gap-3 md:grid-cols-2">
               <p className="text-sm text-muted-foreground">
                 Review all captured information, then submit for lender login. You will be able to
                 track the file in the Loan Process screen.
@@ -173,7 +173,7 @@ function ApplyPage() {
               </button>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="grid gap-3 md:grid-cols-2">
               {(fieldsByStep[active] ?? []).map((f) => (
                 <label key={f.label} className="block">
                   <span className="text-xs font-bold text-muted-foreground">{f.label} *</span>

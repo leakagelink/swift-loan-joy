@@ -73,7 +73,7 @@ function MenuPage() {
     <AppShell>
       <PageHeader eyebrow="More" title="Menu" subtitle="Everything else, neatly organised." />
 
-      <div className="relative z-10 -mt-5 space-y-5 px-4">
+      <div className="relative z-10 -mt-5 space-y-5 px-4 md:px-6 lg:px-8">
         <div className="card-soft flex items-center gap-3 p-4">
           <span className="grid size-12 place-items-center rounded-full brand-gradient text-base font-bold text-primary-foreground">
             SG
@@ -87,6 +87,7 @@ function MenuPage() {
           </span>
         </div>
 
+        <div className="grid gap-5 lg:grid-cols-2">
         {groups.map((g) => (
           <div key={g.title}>
             <h2 className="mb-2 px-1 text-[11px] font-bold tracking-[0.16em] text-muted-foreground uppercase">
@@ -124,6 +125,7 @@ function MenuPage() {
             </div>
           </div>
         ))}
+        </div>
 
         <Link
           to="/login"

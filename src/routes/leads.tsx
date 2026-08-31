@@ -59,7 +59,7 @@ function Leads() {
         }
       />
 
-      <div className="relative z-10 -mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4 md:px-6 lg:px-8">
         <div className="card-soft flex items-center gap-2 px-4 py-3">
           <Search className="size-[18px] text-muted-foreground" />
           <input
@@ -86,7 +86,7 @@ function Leads() {
           ))}
         </div>
 
-        <div className="space-y-3">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {list.map((l) => (
             <div key={l.id} className="card-soft p-4">
               <div className="flex items-start justify-between gap-3">

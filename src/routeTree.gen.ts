@@ -17,6 +17,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as TargetRouteImport } from './routes/target'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ProcessRoute = ProcessRouteImport.update({
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TargetRoute = TargetRouteImport.update({
   id: '/target',
   path: '/target',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
   '/process': typeof ProcessRoute
+  '/signup': typeof SignupRoute
   '/target': typeof TargetRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
   '/process': typeof ProcessRoute
+  '/signup': typeof SignupRoute
   '/target': typeof TargetRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
   '/process': typeof ProcessRoute
+  '/signup': typeof SignupRoute
   '/target': typeof TargetRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/payment'
     | '/process'
+    | '/signup'
     | '/target'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/payment'
     | '/process'
+    | '/signup'
     | '/target'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/payment'
     | '/process'
+    | '/signup'
     | '/target'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   MenuRoute: typeof MenuRoute
   PaymentRoute: typeof PaymentRoute
   ProcessRoute: typeof ProcessRoute
+  SignupRoute: typeof SignupRoute
   TargetRoute: typeof TargetRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/target': {
       id: '/target'
       path: '/target'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   MenuRoute: MenuRoute,
   PaymentRoute: PaymentRoute,
   ProcessRoute: ProcessRoute,
+  SignupRoute: SignupRoute,
   TargetRoute: TargetRoute,
 }
 export const routeTree = rootRouteImport

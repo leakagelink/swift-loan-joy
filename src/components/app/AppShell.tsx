@@ -1,5 +1,14 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Bell, Calculator, Home, Target, Users, Menu as MenuIcon } from "lucide-react";
+import {
+  Bell,
+  Calculator,
+  Home,
+  Target,
+  Users,
+  Menu as MenuIcon,
+  FilePlus2,
+  Activity,
+} from "lucide-react";
 import type { ReactNode } from "react";
 
 const nav = [
@@ -9,15 +18,24 @@ const nav = [
   { to: "/menu", label: "Menu", icon: MenuIcon },
 ];
 
+const deskNav = [
+  { to: "/", label: "Home", icon: Home },
+  { to: "/leads", label: "Leads", icon: Users },
+  { to: "/apply", label: "Apply", icon: FilePlus2 },
+  { to: "/process", label: "Process", icon: Activity },
+  { to: "/target", label: "Target", icon: Target },
+  { to: "/menu", label: "Menu", icon: MenuIcon },
+];
+
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
-    <span className="flex items-center gap-2">
-      <span className="brand-gradient sheen grid size-9 place-items-center rounded-xl text-primary-foreground shadow-raised">
+    <span className="flex min-w-0 items-center gap-2">
+      <span className="brand-gradient sheen grid size-9 shrink-0 place-items-center rounded-xl text-primary-foreground shadow-raised">
         <span className="font-display text-sm font-bold">BS</span>
       </span>
       {!compact && (
-        <span className="leading-none">
-          <span className="block font-display text-[15px] font-bold text-primary-deep">
+        <span className="min-w-0 leading-none">
+          <span className="block truncate font-display text-[15px] font-bold text-primary-deep">
             Business Standard
           </span>
           <span className="block text-[11px] font-semibold tracking-[0.16em] text-gold uppercase">
@@ -31,15 +49,37 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const path = useRouterState({ select: (s) => s.location.pathname });
+  const isActive = (to: string) => (to === "/" ? path === "/" : path.startsWith(to));
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background shadow-raised">
-        <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border/70 bg-surface/90 px-4 py-3 backdrop-blur-xl">
-          <Link to="/">
-            <BrandMark />
-          </Link>
-          <div className="flex items-center gap-2">
+      <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background shadow-raised md:max-w-3xl lg:max-w-6xl lg:shadow-none">
+        <header className="sticky top-0 z-30 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/70 bg-surface/90 px-4 py-3 backdrop-blur-xl md:px-6 lg:px-8">
+          <div className="flex min-w-0 items-center gap-8">
+            <Link to="/" className="min-w-0">
+              <BrandMark />
+            </Link>
+            <nav className="hidden lg:block">
+              <ul className="flex items-center gap-1">
+                {deskNav.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      to={item.to}
+                      className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                        isActive(item.to)
+                          ? "bg-accent text-primary"
+                          : "text-muted-foreground hover:bg-muted"
+                      }`}
+                    >
+                      <item.icon className="size-4" />
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               to="/calculator"
               aria-label="EMI calculator"
@@ -64,12 +104,12 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main className="flex-1 pb-24">{children}</main>
+        <main className="flex-1 pb-24 lg:pb-12">{children}</main>
 
-        <nav className="fixed bottom-0 z-30 w-full max-w-md border-t border-border/70 bg-surface/95 px-3 pt-2 pb-3 backdrop-blur-xl">
+        <nav className="fixed bottom-0 left-1/2 z-30 w-full max-w-md -translate-x-1/2 border-t border-border/70 bg-surface/95 px-3 pt-2 pb-3 backdrop-blur-xl md:max-w-3xl lg:hidden">
           <ul className="grid grid-cols-4">
             {nav.map((item) => {
-              const active = item.to === "/" ? path === "/" : path.startsWith(item.to);
+              const active = isActive(item.to);
               return (
                 <li key={item.to}>
                   <Link
@@ -103,16 +143,18 @@ export function PageHeader({
   right?: ReactNode;
 }) {
   return (
-    <div className="brand-gradient sheen px-5 pt-6 pb-8 text-primary-foreground">
-      <div className="flex items-start justify-between gap-3">
-        <div>
+    <div className="brand-gradient sheen px-5 pt-6 pb-8 text-primary-foreground md:px-6 md:pt-8 md:pb-10 lg:px-8">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+        <div className="min-w-0">
           {eyebrow && (
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase opacity-80">
               {eyebrow}
             </p>
           )}
-          <h1 className="mt-1 text-2xl font-bold">{title}</h1>
-          {subtitle && <p className="mt-1 max-w-[15rem] text-sm opacity-85">{subtitle}</p>}
+          <h1 className="mt-1 text-2xl font-bold md:text-3xl">{title}</h1>
+          {subtitle && (
+            <p className="mt-1 max-w-[15rem] text-sm opacity-85 sm:max-w-xl">{subtitle}</p>
+          )}
         </div>
         {right}
       </div>

@@ -37,11 +37,11 @@ function CalculatorPage() {
     <AppShell>
       <PageHeader eyebrow="Tools" title="EMI Calculator" subtitle="Quote instantly on the call." />
 
-      <div className="relative z-10 -mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4 md:px-6 lg:px-8">
         <div className="card-soft brand-gradient sheen p-5 text-center text-primary-foreground">
           <p className="text-xs font-semibold tracking-[0.2em] uppercase opacity-80">Monthly EMI</p>
           <p className="mt-1 font-display text-4xl font-bold">{inr(emi)}</p>
-          <div className="mt-4 grid grid-cols-2 gap-3 text-left">
+          <div className="mt-4 grid grid-cols-2 gap-3 text-left md:grid-cols-4">
             <div className="rounded-xl bg-primary-foreground/12 p-3">
               <p className="text-[11px] opacity-80">Total interest</p>
               <p className="text-sm font-bold">{inr(interest)}</p>
