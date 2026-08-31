@@ -37,8 +37,8 @@ function PaymentPage() {
         subtitle="Pick a plan, pay once, start logging files."
       />
 
-      <div className="relative z-10 -mt-5 space-y-5 px-4">
-        <div className="space-y-3">
+      <div className="relative z-10 -mt-5 space-y-5 px-4 md:px-6 lg:px-8">
+        <div className="grid gap-3 md:grid-cols-3">
           {loginPlans.map((p) => {
             const active = plan === p.id;
             return (
@@ -77,7 +77,7 @@ function PaymentPage() {
 
         <div>
           <h2 className="mb-2 text-base font-bold">Payment method</h2>
-          <div className="space-y-2.5">
+          <div className="grid gap-2.5 md:grid-cols-2">
             {methods.map((m) => (
               <button
                 key={m.id}

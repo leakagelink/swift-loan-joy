@@ -44,7 +44,7 @@ function TargetPage() {
     <AppShell>
       <PageHeader eyebrow="Performance tracker" title="My Target" />
 
-      <div className="relative z-10 -mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4 md:px-6 lg:px-8">
         <div className="card-soft flex items-center justify-between px-4 py-3">
           <button className="grid size-9 place-items-center rounded-xl bg-muted text-muted-foreground">
             <ChevronLeft className="size-4" />
@@ -71,7 +71,7 @@ function TargetPage() {
           <Ring value={64} />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <div className="card-soft brand-gradient sheen p-4 text-primary-foreground">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <FileText className="size-4" /> File Target
@@ -96,7 +96,7 @@ function TargetPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 md:grid-cols-6">
           {[
             { v: "7", l: "Files done", tone: "text-primary" },
             { v: "12", l: "Files target", tone: "text-foreground" },

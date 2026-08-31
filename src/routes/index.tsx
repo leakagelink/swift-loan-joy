@@ -71,8 +71,8 @@ function Home() {
         </div>
       </section>
 
-      <div className="relative z-10 -mt-14 space-y-5 px-4">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="relative z-10 -mt-14 space-y-5 px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <div className="card-soft p-4">
             <p className="text-xs font-semibold text-muted-foreground">Payout · This month</p>
             <p className="mt-1 font-display text-2xl font-bold text-primary">{inr(184500)}</p>
@@ -92,7 +92,7 @@ function Home() {
               New file <ArrowUpRight className="size-3.5" />
             </Link>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
             {quickProducts.map((p) => (
               <Link
                 key={p.label}
@@ -106,7 +106,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <div className="card-soft p-4">
             <p className="text-xs font-semibold text-muted-foreground">File target</p>
             <div className="mt-1 flex items-baseline justify-between">
@@ -136,7 +136,7 @@ function Home() {
               Offers
             </span>
           </div>
-          <div className="space-y-2.5">
+          <div className="grid gap-2.5 md:grid-cols-3">
             {benefits.map((b) => (
               <div key={b.title} className="card-soft flex items-center gap-3 p-3.5">
                 <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent text-primary">
