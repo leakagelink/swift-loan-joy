@@ -52,7 +52,7 @@ const benefits = [
 function Home() {
   return (
     <AppShell>
-      <section className="brand-gradient sheen px-5 pt-6 pb-20 text-primary-foreground">
+      <section className="brand-gradient sheen px-5 pt-6 pb-20 md:px-6 md:pt-8 lg:px-8 text-primary-foreground">
         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase opacity-80">
           Good afternoon 👋
         </p>
