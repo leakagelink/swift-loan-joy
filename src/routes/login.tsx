@@ -45,7 +45,7 @@ function LoginPage() {
 
 
       <form
-        className="mt-6 space-y-4"
+        className="mt-5 space-y-4 sm:mt-6"
         onSubmit={(e) => {
           e.preventDefault();
           if (mode === "otp" && !sent) setSent(true);
@@ -55,10 +55,11 @@ function LoginPage() {
           <span className="text-xs font-bold text-muted-foreground">
             {mode === "otp" ? "Mobile number" : "Partner ID / Email"}
           </span>
-          <div className="mt-1.5 flex items-center gap-2 rounded-2xl border border-border bg-background px-4 py-3">
+          <div className="mt-1.5 flex items-center gap-2 rounded-2xl border border-border bg-background px-3.5 py-3 sm:px-4">
             <Smartphone className="size-[18px] shrink-0 text-muted-foreground" />
             <input
-              className="w-full min-w-0 bg-transparent text-sm outline-none"
+              className="w-full min-w-0 bg-transparent text-[15px] outline-none sm:text-sm"
+              inputMode={mode === "otp" ? "numeric" : "text"}
               placeholder={mode === "otp" ? "98200 00000" : "BSL-DSA-4471"}
             />
           </div>
@@ -67,11 +68,11 @@ function LoginPage() {
         {mode === "password" ? (
           <label className="block">
             <span className="text-xs font-bold text-muted-foreground">Password</span>
-            <div className="mt-1.5 flex items-center gap-2 rounded-2xl border border-border bg-background px-4 py-3">
+            <div className="mt-1.5 flex items-center gap-2 rounded-2xl border border-border bg-background px-3.5 py-3 sm:px-4">
               <Lock className="size-[18px] shrink-0 text-muted-foreground" />
               <input
                 type="password"
-                className="w-full min-w-0 bg-transparent text-sm outline-none"
+                className="w-full min-w-0 bg-transparent text-[15px] outline-none sm:text-sm"
                 placeholder="••••••••"
               />
             </div>
@@ -87,7 +88,7 @@ function LoginPage() {
                     maxLength={1}
                     inputMode="numeric"
                     aria-label={`OTP digit ${i + 1}`}
-                    className="h-11 w-full min-w-0 rounded-xl border border-border bg-background text-center text-lg font-bold outline-none focus:border-primary sm:h-12"
+                    className="h-12 w-full min-w-0 rounded-xl border border-border bg-background p-0 text-center text-base font-bold outline-none focus:border-primary sm:text-lg"
                   />
                 ))}
               </div>
@@ -96,24 +97,24 @@ function LoginPage() {
           )
         )}
 
-        <button className="flex w-full items-center justify-center gap-2 rounded-2xl brand-gradient py-3.5 text-sm font-bold text-primary-foreground shadow-raised">
+        <button className="flex w-full items-center justify-center gap-2 rounded-2xl brand-gradient py-3.5 text-sm min-h-12 font-bold text-primary-foreground shadow-raised">
           {mode === "otp" && !sent ? "Send OTP" : "Login securely"}
           <ArrowRight className="size-4" />
         </button>
       </form>
 
-      <button className="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-border py-3.5 text-sm font-bold text-primary">
+      <button className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl border border-border py-3.5 text-sm font-bold text-primary">
         <Fingerprint className="size-4" /> Login with biometrics
       </button>
 
-      <div className="mt-6 flex items-start gap-2 rounded-2xl bg-accent/60 p-3.5">
+      <div className="mt-5 flex items-start gap-2 rounded-2xl bg-accent/60 p-3.5 sm:mt-6">
         <ShieldCheck className="mt-0.5 size-4 shrink-0 text-primary" />
         <p className="text-[11px] text-primary-deep">
           256-bit encrypted. Your customer data and documents never leave the secured partner vault.
         </p>
       </div>
 
-      <p className="mt-6 text-center text-xs text-muted-foreground">
+      <p className="mt-5 text-center text-xs text-muted-foreground sm:mt-6">
         New partner?{" "}
         <Link to="/signup" className="font-bold text-primary">
           Create partner account
