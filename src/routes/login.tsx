@@ -32,8 +32,9 @@ function LoginPage() {
         {(["otp", "password"] as const).map((m) => (
           <button
             key={m}
+            type="button"
             onClick={() => setMode(m)}
-            className={`rounded-xl py-2.5 text-sm font-bold transition-colors ${
+            className={`min-w-0 truncate rounded-xl py-2.5 text-[13px] font-bold transition-colors sm:text-sm ${
               mode === m ? "bg-surface text-primary shadow-soft" : "text-muted-foreground"
             }`}
           >
@@ -41,6 +42,7 @@ function LoginPage() {
           </button>
         ))}
       </div>
+
 
       <form
         className="mt-6 space-y-4"
