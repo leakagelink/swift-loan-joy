@@ -10,14 +10,28 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApplyRouteImport } from './routes/apply'
+import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as LeadsRouteImport } from './routes/leads'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as MenuRouteImport } from './routes/menu'
 import { Route as PaymentRouteImport } from './routes/payment'
+import { Route as ProcessRouteImport } from './routes/process'
 import { Route as TargetRouteImport } from './routes/target'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplyRoute = ApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeadsRoute = LeadsRouteImport.update({
@@ -30,9 +44,19 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaymentRoute = PaymentRouteImport.update({
   id: '/payment',
   path: '/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TargetRoute = TargetRouteImport.update({
@@ -43,39 +67,83 @@ const TargetRoute = TargetRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
+  '/calculator': typeof CalculatorRoute
   '/leads': typeof LeadsRoute
   '/login': typeof LoginRoute
+  '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
+  '/process': typeof ProcessRoute
   '/target': typeof TargetRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
+  '/calculator': typeof CalculatorRoute
   '/leads': typeof LeadsRoute
   '/login': typeof LoginRoute
+  '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
+  '/process': typeof ProcessRoute
   '/target': typeof TargetRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
+  '/calculator': typeof CalculatorRoute
   '/leads': typeof LeadsRoute
   '/login': typeof LoginRoute
+  '/menu': typeof MenuRoute
   '/payment': typeof PaymentRoute
+  '/process': typeof ProcessRoute
   '/target': typeof TargetRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/leads' | '/login' | '/payment' | '/target'
+  fullPaths:
+    | '/'
+    | '/apply'
+    | '/calculator'
+    | '/leads'
+    | '/login'
+    | '/menu'
+    | '/payment'
+    | '/process'
+    | '/target'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/leads' | '/login' | '/payment' | '/target'
-  id: '__root__' | '/' | '/leads' | '/login' | '/payment' | '/target'
+  to:
+    | '/'
+    | '/apply'
+    | '/calculator'
+    | '/leads'
+    | '/login'
+    | '/menu'
+    | '/payment'
+    | '/process'
+    | '/target'
+  id:
+    | '__root__'
+    | '/'
+    | '/apply'
+    | '/calculator'
+    | '/leads'
+    | '/login'
+    | '/menu'
+    | '/payment'
+    | '/process'
+    | '/target'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApplyRoute: typeof ApplyRoute
+  CalculatorRoute: typeof CalculatorRoute
   LeadsRoute: typeof LeadsRoute
   LoginRoute: typeof LoginRoute
+  MenuRoute: typeof MenuRoute
   PaymentRoute: typeof PaymentRoute
+  ProcessRoute: typeof ProcessRoute
   TargetRoute: typeof TargetRoute
 }
 
@@ -86,6 +154,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apply': {
+      id: '/apply'
+      path: '/apply'
+      fullPath: '/apply'
+      preLoaderRoute: typeof ApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leads': {
@@ -102,11 +184,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/payment': {
       id: '/payment'
       path: '/payment'
       fullPath: '/payment'
       preLoaderRoute: typeof PaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/target': {
@@ -121,9 +217,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApplyRoute: ApplyRoute,
+  CalculatorRoute: CalculatorRoute,
   LeadsRoute: LeadsRoute,
   LoginRoute: LoginRoute,
+  MenuRoute: MenuRoute,
   PaymentRoute: PaymentRoute,
+  ProcessRoute: ProcessRoute,
   TargetRoute: TargetRoute,
 }
 export const routeTree = rootRouteImport

@@ -59,7 +59,7 @@ function Leads() {
         }
       />
 
-      <div className="-mt-5 space-y-4 px-4">
+      <div className="relative z-10 -mt-5 space-y-4 px-4">
         <div className="card-soft flex items-center gap-2 px-4 py-3">
           <Search className="size-[18px] text-muted-foreground" />
           <input
