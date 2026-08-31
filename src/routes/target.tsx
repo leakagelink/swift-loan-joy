@@ -71,7 +71,7 @@ function TargetPage() {
           <Ring value={64} />
         </div>
 
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3">
           <div className="card-soft brand-gradient sheen p-4 text-primary-foreground">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <FileText className="size-4" /> File Target

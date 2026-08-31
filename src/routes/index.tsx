@@ -72,7 +72,7 @@ function Home() {
       </section>
 
       <div className="relative z-10 -mt-14 space-y-5 px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3">
           <div className="card-soft p-4">
             <p className="text-xs font-semibold text-muted-foreground">Payout · This month</p>
             <p className="mt-1 font-display text-2xl font-bold text-primary">{inr(184500)}</p>
@@ -106,7 +106,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3">
           <div className="card-soft p-4">
             <p className="text-xs font-semibold text-muted-foreground">File target</p>
             <div className="mt-1 flex items-baseline justify-between">
