@@ -10,6 +10,7 @@ import {
   Activity,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import brandLogo from "@/assets/bsl-logo.png";
 
 const nav = [
   { to: "/", label: "Home", icon: Home },
@@ -36,8 +37,19 @@ export function BrandMark({
 }) {
   return (
     <span className="flex min-w-0 items-center gap-2">
-      <span className="brand-gradient sheen grid size-9 shrink-0 place-items-center rounded-xl text-primary-foreground shadow-raised">
-        <span className="font-display text-sm font-bold">BS</span>
+      <span
+        className={`grid size-9 shrink-0 place-items-center overflow-hidden rounded-xl p-1 shadow-raised ${
+          tone === "light" ? "bg-white/12 backdrop-blur-sm" : "bg-accent/70"
+        }`}
+      >
+        <img
+          src={brandLogo}
+          alt="Business Standard Loan logo"
+          width={1024}
+          height={1024}
+          loading="lazy"
+          className="size-full object-contain"
+        />
       </span>
       {!compact && (
         <span className="min-w-0 leading-none">
